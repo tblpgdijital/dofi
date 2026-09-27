@@ -4,7 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#002b49">
-<title>Düzeltici Faaliyet Portalı</title>
+<meta name="application-name" content="DOFİ">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="DOFİ">
+<title>DOFİ | Düzeltici Faaliyet Portalı</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f4f6f9}
@@ -27,7 +35,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f4f6f9}
     <div class="inputSk"></div><div class="btnSk"></div><div class="shimmer"></div>
   </div>
 </div>
-<iframe id="frame" title="Düzeltici Faaliyet Portalı"
+<iframe id="frame" title="DOFİ Düzeltici Faaliyet Portalı"
   allow="camera; microphone; clipboard-read; clipboard-write"
   referrerpolicy="strict-origin-when-cross-origin"></iframe>
 <script>
@@ -37,6 +45,12 @@ const firstLoad=document.getElementById('firstLoad');
 frame.src=APP_URL+'?embedded=1';
 frame.addEventListener('load',()=>setTimeout(()=>firstLoad.classList.add('hide'),60));
 setTimeout(()=>firstLoad.classList.add('hide'),4500);
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('./sw.js',{scope:'./'})
+      .catch(err=>console.error('Service Worker kayıt hatası:',err));
+  });
+}
 </script>
 </body>
 </html>

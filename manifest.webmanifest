@@ -1,0 +1,25 @@
+{
+  "name": "DOFİ - Düzeltici Faaliyet Portalı",
+  "short_name": "DOFİ",
+  "description": "TUI BLUE Palm Garden Düzeltici Faaliyet Portalı",
+  "id": "/dofi/",
+  "start_url": "/dofi/",
+  "scope": "/dofi/",
+  "display": "standalone",
+  "background_color": "#f4f6f9",
+  "theme_color": "#002b49",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
